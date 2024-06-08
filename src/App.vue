@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue'
-
+import { db } from './firebase'
+import { collection, getDocs, onSnapshot, addDoc,deleteDoc,doc,updateDoc,query,orderBy,limit } from "firebase/firestore";
 const todos = ref([]);
 
 
@@ -10,8 +11,8 @@ const newTodo = ref({
    completado: false
 });
 
-const addTodo = () =>{
-   console.log(newTodo.value);
+const addTodo = async () =>{
+   
 }
 
 
@@ -85,6 +86,7 @@ const addTodo = () =>{
                         type="submit"
                         class="flex justify-center w-24 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                      >
+                     Eliminar
                      </button>
                   </div>
                </article>
