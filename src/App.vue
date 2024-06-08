@@ -1,4 +1,13 @@
 <script setup>
+import {ref} from 'vue'
+
+const todos = ref([]);
+
+
+const newTodo = ref({
+   nombre: '',
+   descripcion: ''
+});
 
 </script>
 
@@ -16,15 +25,18 @@
                      <input 
                         type="text" 
                         name="name" 
-                        id="name" 
+                        id="nombre" 
                         class="block w-full rounded-md border-0 px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
                   </div>
                </div>
 
                <div>
-                  <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Descripción</label>
+                  <label for="descripcion" class="block text-sm font-medium leading-6 text-gray-900">Descripción</label>
                   <div>
-                    <textarea rows="3" 
+                    <textarea 
+                    name="descripcion"
+                    id="descripcion"
+                    rows="3" 
                     class="block w-full rounded-md px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                   </div>
                </div>
